@@ -1,0 +1,30 @@
+﻿@model Checklist.Models.LoginViewModel
+<body class="d-flex align-items-center justify-content-center flex-column">
+	<h1>Login</h1>
+	<div class="col-md-4">
+		<form asp-action="Login" enctype="multipart/form-data">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group my-3">
+				<label asp-for="Email" class="control-label"></label>
+				<input asp-for="Email" class="form-control" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+			<div class="form-group my-3">
+				<label asp-for="Password" class="control-label"></label>
+				<input asp-for="Password" type="password" class="form-control" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+			<div class="form-group my-3 d-flex justify-content-between">
+				<input type="submit" value="Log in" class="btn btn-success my-3 px-4 py-1"/>
+			</div>
+		</form>
+		<div>
+			Don't have an account?
+			<a class="link-light text-decoration-none" asp-controller="Account" asp-action="Register">
+				<button class="btn btn-primary mx-3 px-3 py-1">
+					Register
+				</button>
+			</a>
+		</div>
+	</div>
+</body>

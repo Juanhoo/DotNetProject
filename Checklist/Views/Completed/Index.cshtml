@@ -1,0 +1,28 @@
+﻿@model List<Checklist.Models.Assignment>
+
+<h1>All completed tasks:</h1>
+<table class="table text-light">
+    <thead>
+        <tr>
+            <th>
+                Task
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Topic)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
